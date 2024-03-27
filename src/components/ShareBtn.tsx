@@ -32,7 +32,7 @@ const ShareBtn = ({ tldrawApp }) => {
     };
 
     return (
-        <div style={{ position: 'fixed', top: '20px', right: '10%' }}>
+        <div style={{ position: 'fixed', top: '20px', right: '10%' , zIndex: 1000}}>
             <button style={{ backgroundColor: 'blue', color: 'white', border: 'none', padding: '10px 20px', fontSize: '16px', cursor: 'pointer', borderRadius: '5px', outline: 'none' }} onClick={exportAsImage}>Export as Image</button>
             <button style={{ backgroundColor: 'blue', color: 'white', border: 'none', padding: '10px 20px', fontSize: '16px', cursor: 'pointer', borderRadius: '5px', outline: 'none', marginLeft: '10px' }} onClick={shareHandler}>Share</button>
         </div>
