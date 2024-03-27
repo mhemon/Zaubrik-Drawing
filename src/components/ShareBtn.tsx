@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 
-const ShareBtn = ({ tldrawApp }) => {
+const ShareBtn = ({ exportAsImage }) => {
     const [imageUrl, setImageUrl] = useState(null);
 
     const shareHandler = async (event) => {
         event.preventDefault(); // This might cause the warning if the event listener is passive
         try {
-            if (navigator.share && imageUrl) {
+            if (navigator.share) {
+                const currentURL = window.location.href;
                 await navigator.share({
                     title: 'Shared TL Draw',
                     text: 'Check out this TL draw!',
-                    url: imageUrl,
+                    url: currentURL,
                 });
                 console.log('Thanks for sharing!');
             } else {
@@ -22,14 +23,15 @@ const ShareBtn = ({ tldrawApp }) => {
         }
     };
 
-    const exportAsImage = () => {
-        tldrawApp.export('png').then((blob) => {
-            const url = URL.createObjectURL(blob);
-            setImageUrl(url);
-        }).catch(error => {
-            console.error('Error exporting as image:', error);
-        });
-    };
+    // const exportAsImage = () => {
+    //     console.log(tldrawApp.export('png'));
+    //     tldrawApp.export('png').then((blob) => {
+    //         const url = URL.createObjectURL(blob);
+    //         setImageUrl(url);
+    //     }).catch(error => {
+    //         console.error('Error exporting as image:', error);
+    //     });
+    // };
 
     return (
         <div style={{ position: 'fixed', top: '20px', right: '10%' , zIndex: 1000}}>
