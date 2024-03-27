@@ -9,7 +9,6 @@ import { Toggle } from "@/components/Toggle";
 import { useCanvas } from "@/hooks/useCanvas"
 import { createShapes } from "@/utils";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Contact } from "@/components/Contact";
 inject();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(<App />);
@@ -22,7 +21,7 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/card/contact" element={<Contact />} />
+					{/* <Route path="/card/contact" element={<Contact />} /> */}
 				</Routes>
 			</BrowserRouter>
 		</React.StrictMode>
@@ -51,5 +50,5 @@ function Home() {
 			<div style={{ zIndex: 999999 }} className={`${isCanvasEnabled && isEditorMounted ? 'transparent' : ''}`}>
 				{<Default />}
 			</div>
-			{isCanvasEnabled && elementsInfo.length > 0 ? <Canvas shapes={shapes} /> : null}</>)
+			{isCanvasEnabled && elementsInfo.length > 0 ? <Canvas shapes={shapes} />: <Canvas shapes={shapes} />}</>)
 }

@@ -1,6 +1,7 @@
 import { Tldraw, TLShape, TLUiComponents } from "@tldraw/tldraw";
 import { SimController } from "@/physics/PhysicsControls";
 import { HTMLShapeUtil } from "@/shapes/HTMLShapeUtil";
+import ShareBtn from "./ShareBtn";
 
 const components: TLUiComponents = {
   HelpMenu: null,
@@ -35,6 +36,7 @@ export function Canvas({ shapes }: { shapes: TLShape[]; }) {
       >
         <SimController shapes={shapes} />
       </Tldraw>
+      <ShareBtn tldrawApp={shapes}></ShareBtn>
     </div>
   );
 }

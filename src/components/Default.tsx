@@ -1,8 +1,8 @@
 export function Default() {
   return (
-    <main>
-      <header>
-        Orion Reed
+    <main>      
+      {/* <header>
+        Zaubrik Tools
       </header>
       <h1>Hello! 👋</h1>
       <p>
@@ -65,7 +65,7 @@ export function Default() {
         <li><a
           href="https://github.com/OrionReed/tldraw-physics">Physics in tldraw</a>
         </li>
-      </ol>
+      </ol> */}
     </main>
   );
 }
